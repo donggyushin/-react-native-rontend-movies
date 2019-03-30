@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, StatusBar } from "react-native";
 import { AppLoading, Asset, Font } from "expo";
+import BottomTabNavigation from "./navigations/BottomTabNavigation";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -20,14 +21,7 @@ export default class App extends React.Component {
         />
       );
     }
-    return (
-      <View style={styles.container}>
-        <StatusBar barStyle={"light-content"} />
-        <Text style={styles.text}>
-          Open up App.js to start working on your app!
-        </Text>
-      </View>
-    );
+    return <BottomTabNavigation />;
   }
 
   _cacheResourcesAsync = async () => {
@@ -48,15 +42,3 @@ export default class App extends React.Component {
     console.log(err);
   };
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "white",
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  text: {
-    fontFamily: "open-sans-bold"
-  }
-});
