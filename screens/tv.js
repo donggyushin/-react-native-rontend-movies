@@ -19,7 +19,7 @@ const Tv = () => {
           color: COLORS.fontColor
         }}
       >
-        Tv
+        TV
       </Text>
     </View>
   );

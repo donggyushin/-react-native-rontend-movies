@@ -1,7 +1,6 @@
 import React from "react";
-import { StyleSheet, Text, View, StatusBar } from "react-native";
-import { AppLoading, Asset, Font } from "expo";
-import BottomTabNavigation from "./navigations/BottomTabNavigation";
+import { AppLoading, Font } from "expo";
+import StackNavigator from "./navigations/StackNavigator";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -21,7 +20,7 @@ export default class App extends React.Component {
         />
       );
     }
-    return <BottomTabNavigation />;
+    return <StackNavigator />;
   }
 
   _cacheResourcesAsync = async () => {
