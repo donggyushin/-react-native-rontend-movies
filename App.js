@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, StatusBar } from "react-native";
 import { AppLoading, Asset, Font } from "expo";
 
 export default class App extends React.Component {
@@ -22,6 +22,7 @@ export default class App extends React.Component {
     }
     return (
       <View style={styles.container}>
+        <StatusBar barStyle={"light-content"} />
         <Text style={styles.text}>
           Open up App.js to start working on your app!
         </Text>
@@ -51,7 +52,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "white",
     alignItems: "center",
     justifyContent: "center"
   },
