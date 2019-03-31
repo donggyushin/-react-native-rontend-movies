@@ -10,14 +10,23 @@ const AppNavigator = createStackNavigator(
     BottomTabNavigation: {
       screen: BottomTabNavigation,
       navigationOptions: ({ navigation }) => ({
-        header: null
+        header: null,
+        headerStyle: {
+          backgroundColor: COLORS.bgColor,
+          elevation: 0,
+          shadowOpacity: 0,
+          borderBottomWidth: 0
+        }
       })
     },
     Details: {
       screen: Detail,
       navigationOptions: ({ navigation }) => ({
         headerStyle: {
-          backgroundColor: COLORS.bgColor
+          backgroundColor: COLORS.bgColor,
+          elevation: 0,
+          shadowOpacity: 0,
+          borderBottomWidth: 0
         },
         headerLeft: <BackToMoviesButton navigation={navigation} />
       })
