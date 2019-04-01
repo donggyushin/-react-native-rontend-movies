@@ -10,13 +10,15 @@ class BackToMoviesButton extends React.Component {
     return (
       <View
         style={{
-          flexDirection: "row",
-          paddingLeft: 10
+          flexDirection: "row"
         }}
       >
         <TouchableOpacity
           style={{
-            flexDirection: "row"
+            flexDirection: "row",
+
+            paddingLeft: 15,
+            paddingRight: 10
           }}
           onPress={_goBack}
         >
@@ -26,9 +28,9 @@ class BackToMoviesButton extends React.Component {
             size={32}
             color={"white"}
           />
-          <Text style={{ color: COLORS.fontColor, fontSize: SIZES.middle }}>
+          {/* <Text style={{ color: COLORS.fontColor, fontSize: SIZES.middle }}>
             Back
-          </Text>
+          </Text> */}
         </TouchableOpacity>
       </View>
     );

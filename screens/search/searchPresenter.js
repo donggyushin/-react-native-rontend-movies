@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text } from "react-native";
-import { COLORS } from "../contants/colors";
-import { SIZES } from "../contants/sizes";
+import { COLORS } from "../../contants/colors";
+import { SIZES } from "../../contants/sizes";
 
 const Search = () => {
   return (

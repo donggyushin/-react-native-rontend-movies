@@ -1,16 +1,16 @@
 import React from "react";
-import { View, Text } from "react-native";
-import { SIZES } from "../contants/sizes";
-import { COLORS } from "../contants/colors";
+import { Text, View } from "react-native";
+import { COLORS } from "../../contants/colors";
+import { SIZES } from "../../contants/sizes";
 
-const Detail = () => {
+const Tv = () => {
   return (
     <View
       style={{
         flex: 1,
-        alignItems: "center",
+        backgroundColor: COLORS.bgColor,
         justifyContent: "center",
-        backgroundColor: "black"
+        alignItems: "center"
       }}
     >
       <Text
@@ -19,10 +19,10 @@ const Detail = () => {
           color: COLORS.fontColor
         }}
       >
-        Detail
+        TV
       </Text>
     </View>
   );
 };
 
-export default Detail;
+export default Tv;
