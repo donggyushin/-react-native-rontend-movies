@@ -9,9 +9,27 @@ const MovieDB = axios.create({
   }
 });
 
-export const MOVIE = {
+export const MOVIE_API = {
   getPopular: () => MovieDB.get("movie/popular"),
   nowPlaying: () => MovieDB.get("movie/now_playing"),
   upComing: () => MovieDB.get("movie/upcoming"),
-  detail: id => MovieDB.get(`movie/${id}`)
+  detail: id =>
+    MovieDB.get(`movie/${id}`, {
+      params: {
+        append_to_response: "videos"
+      }
+    }),
+  recommendations: id => MovieDB.get(`movie/${id}/recommendations`)
+};
+
+export const TV_API = {
+  getPopular: () => MovieDB.get("tv/popular"),
+  onTheAir: () => MovieDB.get("tv/on_the_air"),
+  detail: id =>
+    MovieDB.get(`tv/${id}`, {
+      params: {
+        append_to_response: "videos"
+      }
+    }),
+  recommendations: id => MovieDB.get(`tv/${id}/recommendations`)
 };
