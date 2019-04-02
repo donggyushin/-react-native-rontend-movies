@@ -8,22 +8,20 @@ export default class MoviesContainer extends React.Component {
     super(props);
     this.state = {
       loading: true,
-      movies: null
+      popular: null
     };
     this._goToDetails = this._goToDetails.bind(this);
   }
 
   async componentDidMount() {
     try {
-      const movies = await MOVIE_API.getPopular();
+      let popular = await MOVIE_API.getPopular();
       this.setState({
-        ...this.state,
-        movies,
+        popular: popular.data.results,
         loading: false
       });
-    } catch (error) {
-      console.log(error);
-      Alert.alert("Alert Title", `${error}`);
+    } catch (err) {
+      Alert.alert("Alert Title", "My Alert Msg");
     }
   }
 
