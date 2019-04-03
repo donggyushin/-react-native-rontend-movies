@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StatusBar, Button } from "react-native";
+import { StatusBar } from "react-native";
 import { COLORS } from "../../contants/colors";
 import { SIZES } from "../../contants/sizes";
 import LoadingComponent from "../../components/loadingComponent";

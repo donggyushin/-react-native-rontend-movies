@@ -2,26 +2,25 @@ import React from "react";
 import { View, Text } from "react-native";
 import { SIZES } from "../../contants/sizes";
 import { COLORS } from "../../contants/colors";
+import styled from "styled-components";
+
+const Container = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  background-color: ${COLORS.bgColor};
+`;
+
+const Title = styled.Text`
+  font-size: ${SIZES.big};
+  color: ${COLORS.fontColor};
+`;
 
 const Detail = () => {
   return (
-    <View
-      style={{
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "black"
-      }}
-    >
-      <Text
-        style={{
-          fontSize: SIZES.big,
-          color: COLORS.fontColor
-        }}
-      >
-        Detail
-      </Text>
-    </View>
+    <Container>
+      <Title>Detail</Title>
+    </Container>
   );
 };
 
