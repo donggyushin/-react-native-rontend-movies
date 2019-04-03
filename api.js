@@ -19,7 +19,13 @@ export const MOVIE_API = {
         append_to_response: "videos"
       }
     }),
-  recommendations: id => MovieDB.get(`movie/${id}/recommendations`)
+  recommendations: id => MovieDB.get(`movie/${id}/recommendations`),
+  search: query =>
+    MovieDB.get("search/movie", {
+      params: {
+        query: encodeURIComponent(query)
+      }
+    })
 };
 
 export const TV_API = {
@@ -31,5 +37,11 @@ export const TV_API = {
         append_to_response: "videos"
       }
     }),
-  recommendations: id => MovieDB.get(`tv/${id}/recommendations`)
+  recommendations: id => MovieDB.get(`tv/${id}/recommendations`),
+  search: query =>
+    MovieDB.get("search/tv", {
+      params: {
+        query: encodeURIComponent(query)
+      }
+    })
 };
