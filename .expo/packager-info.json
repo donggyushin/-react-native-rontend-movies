@@ -2,8 +2,9 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 16036,
+  "packagerPid": 4406,
   "expoServerNgrokUrl": "https://33-pxj.donggyushin.rontendmovies.exp.direct",
   "packagerNgrokUrl": "https://packager.33-pxj.donggyushin.rontendmovies.exp.direct",
-  "ngrokPid": 16059
+  "ngrokPid": 4424,
+  "webpackServerPort": null
 }

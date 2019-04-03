@@ -15,9 +15,10 @@ export default class MoviesContainer extends React.Component {
 
   async componentDidMount() {
     try {
-      let popular = await MOVIE_API.getPopular();
+      let response = await MOVIE_API.getPopular();
+      const popular = response.data.results;
       this.setState({
-        popular: popular.data.results,
+        popular,
         loading: false
       });
     } catch (err) {
