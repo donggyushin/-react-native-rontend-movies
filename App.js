@@ -1,6 +1,7 @@
 import React from "react";
-import { AppLoading, Font } from "expo";
+import { AppLoading } from "expo";
 import StackNavigator from "./navigations/StackNavigator";
+import { _cacheResourcesAsync } from "./config";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -10,7 +11,7 @@ export default class App extends React.Component {
     };
   }
   render() {
-    const { _appLoaded, _onError, _cacheResourcesAsync } = this;
+    const { _appLoaded, _onError } = this;
     if (!this.state.loaded) {
       return (
         <AppLoading
@@ -22,14 +23,6 @@ export default class App extends React.Component {
     }
     return <StackNavigator />;
   }
-
-  _cacheResourcesAsync = async () => {
-    await Font.loadAsync({
-      "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf"),
-      "open-sans-light": require("./assets/fonts/OpenSans-Light.ttf"),
-      "open-sans-regular": require("./assets/fonts/OpenSans-Regular.ttf")
-    });
-  };
 
   _appLoaded = () => {
     this.setState({
