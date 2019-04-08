@@ -37,6 +37,12 @@ export default class MoviesContainer extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    this.setState({
+      loading: true
+    });
+  }
+
   render() {
     const { _goToDetails } = this;
     const { loading, popular, nowPlaying, upComing, error } = this.state;

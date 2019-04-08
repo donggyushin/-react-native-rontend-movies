@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { COLORS } from "../contants/colors";
+import WEIGHT from "../contants/weight";
 
 const Button = styled.TouchableOpacity`
   background-color: ${COLORS.grapeFruit};
@@ -9,6 +10,7 @@ const Button = styled.TouchableOpacity`
 `;
 const Title = styled.Text`
   color: ${COLORS.fontColor};
+  font-weight: ${WEIGHT.middle};
 `;
 
 const RedButton = ({ title }) => (
