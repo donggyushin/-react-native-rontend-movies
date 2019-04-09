@@ -11,7 +11,7 @@ const Container = styled.View`
 `;
 
 const Slider = ({ movies }) => (
-  <Swiper autoplay={true} autoplayTimeout={3} showsPagination={false}>
+  <Swiper autoplay={true} autoplayTimeout={4.5} showsPagination={false}>
     {movies
       .filter(movie => movie.backdrop_path !== null)
       .map(movie => (

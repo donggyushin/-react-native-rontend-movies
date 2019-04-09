@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { LAYOUTS } from "../../contants/layouts";
 import Swiper from "../../components/swiper";
 import { StatusBar } from "react-native";
+import HorizontalMovies from "../../components/horizontalMovies";
 
 const Container = styled.ScrollView`
   flex: 1;
@@ -28,6 +29,7 @@ const MoviesPresenter = ({ loading, popular, nowPlaying, upComing }) => {
       <MovieSliderContainer>
         <Swiper movies={nowPlaying} />
       </MovieSliderContainer>
+      <HorizontalMovies title={"Upcoming movies"} movies={upComing} />
     </Container>
   );
 };
