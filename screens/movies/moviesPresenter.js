@@ -29,7 +29,7 @@ const MoviesPresenter = ({ loading, popular, nowPlaying, upComing }) => {
       <MovieSliderContainer>
         <Swiper movies={nowPlaying} />
       </MovieSliderContainer>
-      <HorizontalMovies title={"Upcoming movies"} movies={upComing} />
+      <HorizontalMovies title={"Upcoming Movies"} movies={upComing} />
     </Container>
   );
 };

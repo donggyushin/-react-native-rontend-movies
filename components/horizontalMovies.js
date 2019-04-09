@@ -26,6 +26,7 @@ const HorizontalMovies = ({ movies, title }) => (
             title={movie.title}
             poster={movie.poster_path}
             voteAverage={movie.vote_average}
+            tv={movie}
           />
         ))}
     </HorizontalContainer>

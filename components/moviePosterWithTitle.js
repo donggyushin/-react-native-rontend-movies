@@ -19,10 +19,17 @@ const VoteAveraging = styled.Text`
   color: white;
 `;
 
-const MoviePosterWithTitle = ({ poster, title, voteAverage }) => (
+const MoviePosterWithTitle = ({ poster, title, voteAverage, tv }) => (
   <Container>
     <MoviePoster moviePosterUri={poster} />
-    <Title>{title.length > 18 ? `${title.substr(0, 15)}...` : title}</Title>
+    {title ? (
+      <Title>{title.length > 18 ? `${title.substr(0, 15)}...` : title}</Title>
+    ) : (
+      <Title>
+        {tv.name.length > 18 ? `${tv.name.substr(0, 15)}...` : tv.name}
+      </Title>
+    )}
+
     <VoteAveraging>✨{voteAverage} / 10</VoteAveraging>
   </Container>
 );
