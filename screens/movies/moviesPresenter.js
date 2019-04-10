@@ -1,12 +1,12 @@
 import React from "react";
 import { COLORS } from "../../contants/colors";
-import { SIZES } from "../../contants/sizes";
 import LoadingComponent from "../../components/loadingComponent";
 import styled from "styled-components";
 import { LAYOUTS } from "../../contants/layouts";
 import Swiper from "../../components/swiper";
 import { StatusBar } from "react-native";
 import HorizontalMovies from "../../components/horizontalMovies";
+import VerticalMovies from "../../components/verticalMovies";
 
 const Container = styled.ScrollView`
   flex: 1;
@@ -19,6 +19,11 @@ const MovieSliderContainer = styled.View`
   height: ${LAYOUTS.height / 3};
 `;
 
+const InvisibleLine = styled.View`
+  margin-top: 10px;
+  margin-bottom: 10px;
+`;
+
 const MoviesPresenter = ({ loading, popular, nowPlaying, upComing }) => {
   if (loading) {
     return <LoadingComponent />;
@@ -29,7 +34,10 @@ const MoviesPresenter = ({ loading, popular, nowPlaying, upComing }) => {
       <MovieSliderContainer>
         <Swiper movies={nowPlaying} />
       </MovieSliderContainer>
+      <InvisibleLine />
       <HorizontalMovies title={"Upcoming Movies"} movies={upComing} />
+      <InvisibleLine />
+      <VerticalMovies movies={popular} />
     </Container>
   );
 };

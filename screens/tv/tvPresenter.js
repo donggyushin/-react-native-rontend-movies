@@ -16,13 +16,15 @@ const Division = styled.View`
 
 const Tv = ({ loading, error, popular, onTheAir, airingToday }) => {
   if (loading) {
-    return <LoadingComponent />;
+    return <LoadingComponent error={error} />;
   }
   return (
     <Container>
       <HorizontalMovies movies={onTheAir} title={"On The Air"} />
       <Division />
       <HorizontalMovies movies={airingToday} title={"Airing Today"} />
+      <Division />
+      <HorizontalMovies movies={popular} title={"Popular TV"} />
     </Container>
   );
 };

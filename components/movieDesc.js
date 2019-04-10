@@ -21,6 +21,7 @@ const VoteAverage = styled.Text`
 `;
 const Desc = styled.Text`
   color: ${COLORS.fontColor};
+  margin-bottom: 7px;
 `;
 
 const MovieDesc = ({ title, overview, voteAverage }) => (
