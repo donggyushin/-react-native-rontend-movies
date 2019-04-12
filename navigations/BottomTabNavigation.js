@@ -99,7 +99,8 @@ const bottomTabNavigator = createBottomTabNavigator(
         backgroundColor: COLORS.bgColor
       },
       showLabel: false
-    }
+    },
+    initialRouteName: "Movies"
   }
 );
 
