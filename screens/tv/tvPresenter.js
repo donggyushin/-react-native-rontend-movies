@@ -3,6 +3,7 @@ import { COLORS } from "../../contants/colors";
 import styled from "styled-components";
 import LoadingComponent from "../../components/loadingComponent";
 import HorizontalMovies from "../../components/horizontalMovies";
+import VerticalMovies from "../../components/verticalMovies";
 
 const Container = styled.ScrollView`
   flex: 1;
@@ -24,7 +25,8 @@ const Tv = ({ loading, error, popular, onTheAir, airingToday }) => {
       <Division />
       <HorizontalMovies movies={airingToday} title={"Airing Today"} />
       <Division />
-      <HorizontalMovies movies={popular} title={"Popular TV"} />
+      {/* <HorizontalMovies movies={popular} title={"Popular TV"} /> */}
+      <VerticalMovies movies={popular} title="Popular Tv" />
     </Container>
   );
 };

@@ -5,6 +5,7 @@ import { LAYOUTS } from "../../contants/layouts";
 import Input from "../../components/InputComponent";
 import HorizontalMovies from "../../components/horizontalMovies";
 import LoadingComponent from "../../components/loadingComponent";
+import VerticalMovies from "../../components/verticalMovies";
 
 const Container = styled.View`
   background-color: ${COLORS.bgColor};
@@ -51,21 +52,21 @@ const Search = ({
       <MovieAndTvContainer>
         {loading ? (
           <LoadingComponent />
-        ) : movies ? (
-          movies.length !== 0 ? (
-            <HorizontalMovies title="Movies" movies={movies} />
+        ) : tvs ? (
+          tvs.length !== 0 ? (
+            <HorizontalMovies title={"TVs"} movies={tvs} />
           ) : (
-            <Text>There is no movie like that. </Text>
+            <Text>There is no TV shows like that. </Text>
           )
         ) : null}
         <Margin />
         {loading ? (
           <LoadingComponent />
-        ) : tvs ? (
-          tvs.length !== 0 ? (
-            <HorizontalMovies title="TVs" movies={tvs} />
+        ) : movies ? (
+          movies.length !== 0 ? (
+            <VerticalMovies title="Movies" movies={movies} />
           ) : (
-            <Text>There is no TV shows like that. </Text>
+            <Text>There is no movie like that. </Text>
           )
         ) : null}
       </MovieAndTvContainer>

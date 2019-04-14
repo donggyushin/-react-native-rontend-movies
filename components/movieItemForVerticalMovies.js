@@ -39,12 +39,14 @@ const MovieItemForVerticalMovies = ({
   poster,
   title,
   voteAverage,
-  overview
+  overview,
+  tv
 }) => (
   <Container>
     <MoviePoster moviePosterUri={poster} />
     <Column>
-      <Title>{title}</Title>
+      {title ? <Title>{title}</Title> : <Title>{tv.name}</Title>}
+
       <VoteAverage>✨{voteAverage} / 10</VoteAverage>
       {overview ? (
         <Overview>

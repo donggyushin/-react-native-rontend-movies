@@ -37,7 +37,8 @@ const MoviesPresenter = ({ loading, popular, nowPlaying, upComing }) => {
       <InvisibleLine />
       <HorizontalMovies title={"Upcoming Movies"} movies={upComing} />
       <InvisibleLine />
-      <VerticalMovies movies={popular} />
+      <InvisibleLine />
+      <VerticalMovies title={"Popular Movies"} movies={popular} />
     </Container>
   );
 };
