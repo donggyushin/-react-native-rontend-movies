@@ -41,7 +41,8 @@ const SlideItem = ({
   moviePosterUri,
   title,
   overview,
-  voteAverage
+  voteAverage,
+  id
 }) => (
   <Container>
     <BgImageContainer>
@@ -51,7 +52,12 @@ const SlideItem = ({
       <MoviePoster moviePosterUri={moviePosterUri} />
     </MoviePosterContainer>
     <MovieDescContainer>
-      <MovieDesc title={title} overview={overview} voteAverage={voteAverage} />
+      <MovieDesc
+        id={id}
+        title={title}
+        overview={overview}
+        voteAverage={voteAverage}
+      />
     </MovieDescContainer>
   </Container>
 );

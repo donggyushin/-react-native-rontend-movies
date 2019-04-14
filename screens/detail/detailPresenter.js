@@ -1,8 +1,8 @@
 import React from "react";
-import { View, Text } from "react-native";
 import { SIZES } from "../../contants/sizes";
 import { COLORS } from "../../contants/colors";
 import styled from "styled-components";
+import LoadingComponent from "../../components/loadingComponent";
 
 const Container = styled.View`
   flex: 1;
@@ -16,7 +16,10 @@ const Title = styled.Text`
   color: ${COLORS.fontColor};
 `;
 
-const Detail = () => {
+const Detail = ({ movie, tv, error, loading, isMovie }) => {
+  if (loading) {
+    return <LoadingComponent />;
+  }
   return (
     <Container>
       <Title>Detail</Title>

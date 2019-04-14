@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { COLORS } from "../contants/colors";
 import WEIGHT from "../contants/weight";
+import { withNavigation } from "react-navigation";
 
 const Button = styled.TouchableOpacity`
   background-color: ${COLORS.grapeFruit};
@@ -13,10 +14,18 @@ const Title = styled.Text`
   font-weight: ${WEIGHT.middle};
 `;
 
-const RedButton = ({ title }) => (
-  <Button>
+const RedButton = ({ title, navigation, id, movieTitle }) => (
+  <Button
+    onPress={() => {
+      navigation.navigate("Details", {
+        id,
+        title: movieTitle,
+        isMovie: true
+      });
+    }}
+  >
     <Title>{title}</Title>
   </Button>
 );
 
-export default RedButton;
+export default withNavigation(RedButton);

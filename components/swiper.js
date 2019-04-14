@@ -22,6 +22,7 @@ const Slider = ({ movies }) => (
             title={movie.title}
             overview={movie.overview}
             voteAverage={movie.vote_average}
+            id={movie.id}
           />
         </Container>
       ))}
