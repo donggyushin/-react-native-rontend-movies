@@ -1,25 +1,32 @@
 import React from "react";
-import { Text, View } from "react-native";
 import { COLORS } from "../../contants/colors";
-import { SIZES } from "../../contants/sizes";
 import styled from "styled-components";
+import LoadingComponent from "../../components/loadingComponent";
+import HorizontalMovies from "../../components/horizontalMovies";
+import VerticalMovies from "../../components/verticalMovies";
 
-const Container = styled.View`
+const Container = styled.ScrollView`
   flex: 1;
   background-color: ${COLORS.bgColor};
-  justify-content: center;
-  align-items: center;
 `;
 
-const Title = styled.Text`
-  font-size: ${SIZES.big};
-  color: ${COLORS.fontColor};
+const Division = styled.View`
+  margin-top: 10px;
+  margin-bottom: 10px;
 `;
 
-const Tv = () => {
+const Tv = ({ loading, error, popular, onTheAir, airingToday }) => {
+  if (loading) {
+    return <LoadingComponent error={error} />;
+  }
   return (
     <Container>
-      <Title>TV</Title>
+      <HorizontalMovies movies={onTheAir} title={"On The Air"} />
+      <Division />
+      <HorizontalMovies movies={airingToday} title={"Airing Today"} />
+      <Division />
+      {/* <HorizontalMovies movies={popular} title={"Popular TV"} /> */}
+      <VerticalMovies movies={popular} title="Popular Tv" />
     </Container>
   );
 };

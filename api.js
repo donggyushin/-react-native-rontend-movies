@@ -31,6 +31,7 @@ export const MOVIE_API = {
 export const TV_API = {
   getPopular: () => MovieDB.get("tv/popular"),
   onTheAir: () => MovieDB.get("tv/on_the_air"),
+  airingToday: () => MovieDB.get("tv/airing_today"),
   detail: id =>
     MovieDB.get(`tv/${id}`, {
       params: {

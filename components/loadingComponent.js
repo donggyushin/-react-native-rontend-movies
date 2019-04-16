@@ -10,9 +10,14 @@ const Container = styled.View`
   background-color: ${COLORS.bgColor};
 `;
 
-const LoadingComponent = () => (
+const Error = styled.Text`
+  color: white;
+`;
+
+const LoadingComponent = ({ error }) => (
   <Container>
     <ActivityIndicator />
+    {error ? <Error>{error}</Error> : null}
   </Container>
 );
 

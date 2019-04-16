@@ -39,7 +39,10 @@ const bottomTabNavigator = createBottomTabNavigator(
               color: COLORS.fontColor
             },
             headerStyle: {
-              backgroundColor: COLORS.bgColor
+              backgroundColor: COLORS.bgColor,
+              elevation: 0,
+              shadowOpacity: 0,
+              borderBottomWidth: 0
             }
           })
         }
@@ -52,7 +55,10 @@ const bottomTabNavigator = createBottomTabNavigator(
           navigationOptions: ({ navigation }) => ({
             title: "TV",
             headerStyle: {
-              backgroundColor: COLORS.bgColor
+              backgroundColor: COLORS.bgColor,
+              elevation: 0,
+              shadowOpacity: 0,
+              borderBottomWidth: 0
             },
             headerTitleStyle: {
               color: COLORS.fontColor
@@ -68,7 +74,10 @@ const bottomTabNavigator = createBottomTabNavigator(
           navigationOptions: ({ navigation }) => ({
             title: "Search",
             headerStyle: {
-              backgroundColor: COLORS.bgColor
+              backgroundColor: COLORS.bgColor,
+              elevation: 0,
+              shadowOpacity: 0,
+              borderBottomWidth: 0
             },
             headerTitleStyle: {
               color: COLORS.fontColor
@@ -90,7 +99,8 @@ const bottomTabNavigator = createBottomTabNavigator(
         backgroundColor: COLORS.bgColor
       },
       showLabel: false
-    }
+    },
+    initialRouteName: "Movies"
   }
 );
 

@@ -28,6 +28,9 @@ const AppNavigator = createStackNavigator(
           shadowOpacity: 0,
           borderBottomWidth: 0
         },
+        headerTitleStyle: {
+          color: COLORS.fontColor
+        },
         headerLeft: <BackToMoviesButton navigation={navigation} />
       })
     }
