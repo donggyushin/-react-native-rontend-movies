@@ -10,7 +10,7 @@ const Container = styled.View`
   height: ${LAYOUTS.height / 3};
 `;
 
-const Slider = ({ movies }) => (
+const Slider = ({ movies, isMovie }) => (
   <Swiper autoplay={true} autoplayTimeout={4.5} showsPagination={false}>
     {movies
       .filter(movie => movie.backdrop_path !== null)
@@ -23,6 +23,7 @@ const Slider = ({ movies }) => (
             overview={movie.overview}
             voteAverage={movie.vote_average}
             id={movie.id}
+            isMovie={isMovie}
           />
         </Container>
       ))}

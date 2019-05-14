@@ -19,9 +19,21 @@ const VoteAveraging = styled.Text`
   color: white;
 `;
 
-const MoviePosterWithTitle = ({ poster, title, voteAverage, tv }) => (
+const MoviePosterWithTitle = ({
+  poster,
+  title,
+  voteAverage,
+  tv,
+  id,
+  isMovie
+}) => (
   <Container>
-    <MoviePoster moviePosterUri={poster} />
+    <MoviePoster
+      title={title}
+      moviePosterUri={poster}
+      id={id}
+      isMovie={isMovie}
+    />
     {title ? (
       <Title>{title.length > 18 ? `${title.substr(0, 15)}...` : title}</Title>
     ) : (

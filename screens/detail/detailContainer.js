@@ -1,4 +1,5 @@
 import React from "react";
+import { Linking } from "react-native";
 import DetailPresenter from "./detailPresenter";
 import { MOVIE_API, TV_API } from "../../api";
 
@@ -45,6 +46,7 @@ export default class DetailContainer extends React.Component {
   }
   render() {
     const { movie, tv, error, loading, isMovie } = this.state;
+    const { pressVideoButton } = this;
     return (
       <DetailPresenter
         movie={movie}
@@ -52,7 +54,12 @@ export default class DetailContainer extends React.Component {
         isMovie={isMovie}
         error={error}
         loading={loading}
+        pressVideoButton={pressVideoButton}
       />
     );
   }
+
+  pressVideoButton = url => {
+    Linking.openURL(url);
+  };
 }

@@ -42,7 +42,8 @@ const SlideItem = ({
   title,
   overview,
   voteAverage,
-  id
+  id,
+  isMovie
 }) => (
   <Container>
     <BgImageContainer>
@@ -57,6 +58,7 @@ const SlideItem = ({
         title={title}
         overview={overview}
         voteAverage={voteAverage}
+        isMovie={isMovie}
       />
     </MovieDescContainer>
   </Container>

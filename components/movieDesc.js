@@ -24,14 +24,19 @@ const Desc = styled.Text`
   margin-bottom: 7px;
 `;
 
-const MovieDesc = ({ title, overview, voteAverage, id }) => (
+const MovieDesc = ({ title, overview, voteAverage, id, isMovie }) => (
   <Container>
     <Title>{title}</Title>
     <VoteAverage>✨ {voteAverage}/10</VoteAverage>
     <Desc>
       {overview.length > 100 ? `${overview.substr(0, 97)}...` : overview}
     </Desc>
-    <RedButton id={id} movieTitle={title} title={"go to detail"} />
+    <RedButton
+      id={id}
+      movieTitle={title}
+      title={"go to detail"}
+      isMovie={isMovie}
+    />
   </Container>
 );
 

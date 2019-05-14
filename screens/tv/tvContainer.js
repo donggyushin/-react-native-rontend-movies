@@ -8,7 +8,8 @@ export default class TvContainer extends React.Component {
     popular: null,
     onTheAir: null,
     airingToday: null,
-    error: null
+    error: null,
+    isMovie: false
   };
 
   async componentDidMount() {
@@ -34,7 +35,14 @@ export default class TvContainer extends React.Component {
   }
 
   render() {
-    const { loading, error, popular, onTheAir, airingToday } = this.state;
+    const {
+      loading,
+      error,
+      popular,
+      onTheAir,
+      airingToday,
+      isMovie
+    } = this.state;
 
     return (
       <TvPresenter
@@ -43,6 +51,7 @@ export default class TvContainer extends React.Component {
         popular={popular}
         onTheAir={onTheAir}
         airingToday={airingToday}
+        isMovie={isMovie}
       />
     );
   }

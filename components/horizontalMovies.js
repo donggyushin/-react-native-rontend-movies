@@ -14,7 +14,7 @@ const Title = styled.Text`
 `;
 const HorizontalContainer = styled.ScrollView``;
 
-const HorizontalMovies = ({ movies, title }) => (
+const HorizontalMovies = ({ movies, title, isMovie }) => (
   <Container>
     <Title>{title}</Title>
     <HorizontalContainer horizontal={true}>
@@ -23,10 +23,12 @@ const HorizontalMovies = ({ movies, title }) => (
         .map(movie => (
           <MoviePosterWithTitle
             key={movie.id}
+            id={movie.id}
             title={movie.title}
             poster={movie.poster_path}
             voteAverage={movie.vote_average}
             tv={movie}
+            isMovie={isMovie}
           />
         ))}
     </HorizontalContainer>

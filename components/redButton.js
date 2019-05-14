@@ -14,13 +14,13 @@ const Title = styled.Text`
   font-weight: ${WEIGHT.middle};
 `;
 
-const RedButton = ({ title, navigation, id, movieTitle }) => (
+const RedButton = ({ title, navigation, id, movieTitle, isMovie }) => (
   <Button
     onPress={() => {
       navigation.navigate("Details", {
         id,
         title: movieTitle,
-        isMovie: true
+        isMovie
       });
     }}
   >

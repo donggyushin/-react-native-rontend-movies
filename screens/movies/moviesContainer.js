@@ -10,7 +10,8 @@ export default class MoviesContainer extends React.Component {
       popular: null,
       error: null,
       nowPlaying: null,
-      upComing: null
+      upComing: null,
+      isMovie: true
     };
     this._goToDetails = this._goToDetails.bind(this);
   }
@@ -45,7 +46,14 @@ export default class MoviesContainer extends React.Component {
 
   render() {
     const { _goToDetails } = this;
-    const { loading, popular, nowPlaying, upComing, error } = this.state;
+    const {
+      loading,
+      popular,
+      nowPlaying,
+      upComing,
+      error,
+      isMovie
+    } = this.state;
 
     return (
       <MoviesPresenter
@@ -55,6 +63,7 @@ export default class MoviesContainer extends React.Component {
         upComing={upComing}
         error={error}
         _goToDetails={_goToDetails}
+        isMovie={isMovie}
       />
     );
   }

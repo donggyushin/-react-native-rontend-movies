@@ -40,10 +40,17 @@ const MovieItemForVerticalMovies = ({
   title,
   voteAverage,
   overview,
-  tv
+  tv,
+  id,
+  isMovie
 }) => (
   <Container>
-    <MoviePoster moviePosterUri={poster} />
+    <MoviePoster
+      isMovie={isMovie}
+      id={id}
+      title={title}
+      moviePosterUri={poster}
+    />
     <Column>
       {title ? <Title>{title}</Title> : <Title>{tv.name}</Title>}
 

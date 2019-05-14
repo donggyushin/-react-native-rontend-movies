@@ -13,7 +13,7 @@ const Title = styled.Text`
   margin-left: 20px;
 `;
 
-const VerticalMovies = ({ movies, title }) => (
+const VerticalMovies = ({ movies, title, isMovie }) => (
   <Container>
     {title ? <Title>{title}</Title> : null}
 
@@ -23,10 +23,12 @@ const VerticalMovies = ({ movies, title }) => (
         <MovieItemForVerticalMovies
           tv={movie}
           key={movie.id}
+          id={movie.id}
           poster={movie.poster_path}
           title={movie.title}
           overview={movie.overview}
           voteAverage={movie.vote_average}
+          isMovie={isMovie}
         />
       ))}
   </Container>

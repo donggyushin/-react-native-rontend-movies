@@ -24,7 +24,13 @@ const InvisibleLine = styled.View`
   margin-bottom: 10px;
 `;
 
-const MoviesPresenter = ({ loading, popular, nowPlaying, upComing }) => {
+const MoviesPresenter = ({
+  loading,
+  popular,
+  nowPlaying,
+  upComing,
+  isMovie
+}) => {
   if (loading) {
     return <LoadingComponent />;
   }
@@ -32,13 +38,21 @@ const MoviesPresenter = ({ loading, popular, nowPlaying, upComing }) => {
     <Container>
       <StatusBar barStyle={"light-content"} />
       <MovieSliderContainer>
-        <Swiper movies={nowPlaying} />
+        <Swiper movies={nowPlaying} isMovie={isMovie} />
       </MovieSliderContainer>
       <InvisibleLine />
-      <HorizontalMovies title={"Upcoming Movies"} movies={upComing} />
+      <HorizontalMovies
+        isMovie={isMovie}
+        title={"Upcoming Movies"}
+        movies={upComing}
+      />
       <InvisibleLine />
       <InvisibleLine />
-      <VerticalMovies title={"Popular Movies"} movies={popular} />
+      <VerticalMovies
+        isMovie={isMovie}
+        title={"Popular Movies"}
+        movies={popular}
+      />
     </Container>
   );
 };
