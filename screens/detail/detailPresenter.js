@@ -5,6 +5,7 @@ import styled from "styled-components";
 import LoadingComponent from "../../components/loadingComponent";
 import BigMoviePoster from "../../components/bigMoviePoster";
 import DetailPageDesc from "../../components/detailPageDesc";
+import TvDetailDesc from "../../components/tv/tvDetailDesc";
 
 const Container = styled.ScrollView`
   flex: 1;
@@ -14,6 +15,11 @@ const Container = styled.ScrollView`
 `;
 
 const SmallContainer = styled.View``;
+
+const Test = styled.Text`
+  display: ${props => (props.visiable ? "flex" : "none")};
+  color: white;
+`;
 
 const Detail = ({ movie, tv, error, loading, isMovie, pressVideoButton }) => {
   if (loading) {
@@ -45,6 +51,19 @@ const Detail = ({ movie, tv, error, loading, isMovie, pressVideoButton }) => {
       {tv ? (
         <SmallContainer>
           <BigMoviePoster moviePoster={tv.backdrop_path} />
+          <TvDetailDesc
+            episode_run_time={tv.episode_run_time[0]}
+            genres={tv.genres}
+            homepage={tv.homepage}
+            name={tv.name}
+            overview={tv.overview}
+            production_companies={tv.production_companies}
+            seasons={tv.seasons}
+            status={tv.status}
+            videoUrl={tv.videos.results[0].key}
+            videoTitle={tv.videos.results[0].name}
+            vote_average={tv.vote_average}
+          />
         </SmallContainer>
       ) : null}
     </Container>
