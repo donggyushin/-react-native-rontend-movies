@@ -54,7 +54,7 @@ const Search = ({
           <LoadingComponent />
         ) : tvs ? (
           tvs.length !== 0 ? (
-            <HorizontalMovies title={"TVs"} movies={tvs} />
+            <HorizontalMovies isMovie={false} title={"TVs"} movies={tvs} />
           ) : (
             <Text>There is no TV shows like that. </Text>
           )
@@ -64,7 +64,7 @@ const Search = ({
           <LoadingComponent />
         ) : movies ? (
           movies.length !== 0 ? (
-            <VerticalMovies title="Movies" movies={movies} />
+            <VerticalMovies title="Movies" isMovie={true} movies={movies} />
           ) : (
             <Text>There is no movie like that. </Text>
           )

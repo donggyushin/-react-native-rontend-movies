@@ -2,6 +2,7 @@ import React from "react";
 import { Linking } from "react-native";
 import DetailPresenter from "./detailPresenter";
 import { MOVIE_API, TV_API } from "../../api";
+import LoadingComponent from "../../components/loadingComponent";
 
 export default class DetailContainer extends React.Component {
   static navigationOptions = ({ navigation }) => {
@@ -15,11 +16,12 @@ export default class DetailContainer extends React.Component {
     tv: null,
     error: null,
     loading: true,
-    isMovie: true
+    isMovie: true,
+    seasons: null
   };
 
   async componentDidMount() {
-    let movie, tv, error, isMovie;
+    let movie, tv, error, isMovie, seasons;
     const { navigation } = this.props;
     const id = navigation.getParam("id");
     title = navigation.getParam("title");
@@ -31,6 +33,7 @@ export default class DetailContainer extends React.Component {
       } else {
         tv = await TV_API.detail(id);
         tv = tv.data;
+        seasons = tv.seasons;
       }
     } catch {
       error = "can't find tv or movie";
@@ -39,14 +42,23 @@ export default class DetailContainer extends React.Component {
         movie,
         tv,
         error,
-        loading: false,
-        isMovie
+        loading: true,
+        isMovie,
+        seasons
       });
+      this.setState({
+        loading: false
+      });
+      console.log(tv);
     }
   }
   render() {
-    const { movie, tv, error, loading, isMovie } = this.state;
-    const { pressVideoButton } = this;
+    const { movie, tv, error, loading, isMovie, seasons } = this.state;
+    const { pressVideoButton, changeSeasonsVisiable } = this;
+
+    if (loading) {
+      return <LoadingComponent />;
+    }
     return (
       <DetailPresenter
         movie={movie}
@@ -55,11 +67,26 @@ export default class DetailContainer extends React.Component {
         error={error}
         loading={loading}
         pressVideoButton={pressVideoButton}
+        changeSeasonsVisiable={changeSeasonsVisiable}
+        seasons={seasons}
       />
     );
   }
 
   pressVideoButton = url => {
     Linking.openURL(url);
+  };
+
+  changeSeasonsVisiable = id => {
+    const { seasons } = this.state;
+    const updatedSeasons = seasons.map(season => {
+      if (season.id == id) {
+        season.visiable = !season.visiable;
+      }
+      return season;
+    });
+    this.setState({
+      seasons: updatedSeasons
+    });
   };
 }

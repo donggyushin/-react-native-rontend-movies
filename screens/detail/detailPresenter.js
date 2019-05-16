@@ -21,12 +21,19 @@ const Test = styled.Text`
   color: white;
 `;
 
-const Detail = ({ movie, tv, error, loading, isMovie, pressVideoButton }) => {
+const Detail = ({
+  movie,
+  tv,
+  error,
+  loading,
+  isMovie,
+  pressVideoButton,
+  changeSeasonsVisiable,
+  seasons
+}) => {
   if (loading) {
     return <LoadingComponent />;
   }
-
-  console.log(tv);
 
   return (
     <Container>
@@ -58,11 +65,12 @@ const Detail = ({ movie, tv, error, loading, isMovie, pressVideoButton }) => {
             name={tv.name}
             overview={tv.overview}
             production_companies={tv.production_companies}
-            seasons={tv.seasons}
+            seasons={seasons}
             status={tv.status}
             videoUrl={tv.videos.results[0].key}
             videoTitle={tv.videos.results[0].name}
             vote_average={tv.vote_average}
+            changeSeasonsVisiable={changeSeasonsVisiable}
           />
         </SmallContainer>
       ) : null}
