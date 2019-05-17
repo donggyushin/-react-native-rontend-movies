@@ -3,7 +3,6 @@ import styled from "styled-components";
 import MovieItemForVerticalMovies from "./movieItemForVerticalMovies";
 import { COLORS } from "../contants/colors";
 import { SIZES } from "../contants/sizes";
-import WEIGHT from "../contants/weight";
 
 const Container = styled.View``;
 
@@ -16,7 +15,6 @@ const Title = styled.Text`
 const VerticalMovies = ({ movies, title, isMovie }) => (
   <Container>
     {title ? <Title>{title}</Title> : null}
-
     {movies
       .filter(movie => movie.poster_path !== null)
       .map(movie => (
